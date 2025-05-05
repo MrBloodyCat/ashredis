@@ -27,7 +27,7 @@ class SyncRedisObject:
         """
         self.key = key
         self.path = path
-        self._path_str = f":{":".join(path)}:" if path else ":"
+        self._path_str = f":{':'.join(path)}:" if path else ":"
         self._redis_params = redis_params
         self._redis = None
         self._data = {}

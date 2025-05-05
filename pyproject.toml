@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ashredis"
-version = "1.1.2"
+version = "1.1.3"
 description = "Async Redis ORM for Python"
 readme = "README.md"
 authors = [{name = "Bloodycat", email = "mrblooddycat@gmail.com"}]
