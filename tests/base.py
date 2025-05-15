@@ -6,7 +6,7 @@ import dotenv
 from redis.asyncio import Redis
 
 from src.ashredis.models import RedisParams
-from src.ashredis.object_redis import RedisObject
+from src.ashredis.object_redis import RedisManager
 from tests.models import ComplexTestModel, NestedLevel1, NestedLevel2, NestedLevel3
 
 dotenv.load_dotenv()
@@ -63,7 +63,7 @@ class BaseRedisTest(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
         await cleanup_redis()
 
-        self.redis_obj = RedisObject(redis_params=REDIS_PARAMS)
+        self.redis_obj = RedisManager(redis_params=REDIS_PARAMS)
         await self.redis_obj.__aenter__()
 
         self.test_model = create_complex_model()

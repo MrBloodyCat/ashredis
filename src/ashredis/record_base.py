@@ -25,8 +25,12 @@ class RecordBase:
         self.key = None
         self.loaded_hash = {}
 
+    @property
+    def is_load(self) -> bool:
+        return True if self.loaded_hash else False
+
     @classmethod
-    def category(cls):
+    def category(cls) -> str:
         return cls.__name__
 
     def to_dict(self) -> dict:

@@ -13,7 +13,7 @@ T = TypeVar("T", bound=RecordBase)
 DEFAULT_SCAN_COUNT = 10000
 
 
-class RedisObject:
+class RedisManager:
     def __init__(self, redis_params: RedisParams):
         """
         Initializes a new instance of RedisObject.
@@ -29,7 +29,7 @@ class RedisObject:
         Async context manager entry point. Establishes connection to Redis.
 
         Returns:
-            RedisObject: The instance with an active Redis connection.
+            RedisManager: The instance with an active Redis connection.
         """
         self._redis = await Redis(**self._redis_params.__dict__, decode_responses=True).__aenter__()
         return self

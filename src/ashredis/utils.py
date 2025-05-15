@@ -1,7 +1,7 @@
 from dataclasses import is_dataclass
 from typing import TypeVar, Type, get_type_hints, get_origin, get_args, Union
 
-from src.ashredis import RecordBase
+from .record_base import RecordBase
 
 T = TypeVar("T", bound=RecordBase)
 
